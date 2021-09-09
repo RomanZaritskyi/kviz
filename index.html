@@ -50,6 +50,7 @@
     <div class="main__form form">
       <div class="form-contour">
         <img class="main-bg" src="./img/main-bg.svg" alt="">
+        <img class="decoration  phone" src="./img/phone.svg" alt="">
         <img class="decoration employee" src="./img/employee.svg" alt="Наш сотрудник">
 
         <!--      content that i hide on click  FIRST SCREEN -->
@@ -57,28 +58,28 @@
           <h3 class="title">Какой автомобиль будем ремонтировать?</h3>
           <ul class="content__list">
             <li class="content__list-item">
-              <img class="kia" src="https://autoritm-service.ru/img/calc-brand3.png" alt="">
+              <img class="kia" src="https://autoritm-service.ru/img/calc-brand3.png" alt="Kia">
             </li>
             <li class="content__list-item">
-              <img class="mazda" src="https://autoritm-service.ru/img/calc-brand4.png" alt="">
+              <img class="mazda" src="https://autoritm-service.ru/img/calc-brand4.png" alt="Mazda">
             </li>
             <li class="content__list-item">
-              <img class="volvo" src="https://autoritm-service.ru/img/calc-brand8.png" alt="">
+              <img class="volvo" src="https://autoritm-service.ru/img/calc-brand8.png" alt="Volvo">
             </li>
             <li class="content__list-item">
-              <img class="ford" src="https://autoritm-service.ru/img/calc-brand1.png" alt="">
+              <img class="ford" src="https://autoritm-service.ru/img/calc-brand1.png" alt="Ford">
             </li>
             <li class="content__list-item">
-              <img class="volkswagen" src="https://autoritm-service.ru/img/calc-brand5.png" alt="">
+              <img class="volkswagen" src="https://autoritm-service.ru/img/calc-brand5.png" alt="Volkswagen">
             </li>
             <li class="content__list-item">
-              <img class="renault" src="https://autoritm-service.ru/img/calc-brand6.png" alt="">
+              <img class="renault" src="https://autoritm-service.ru/img/calc-brand6.png" alt="Renault">
             </li>
             <li class="content__list-item">
-              <img class="hyundai" src="https://autoritm-service.ru/img/calc-brand2.png" alt="">
+              <img class="hyundai" src="https://autoritm-service.ru/img/calc-brand2.png" alt="Hyundai">
             </li>
             <li class="content__list-item">
-              <img class="mitsubishi" src="https://autoritm-service.ru/img/calc-brand7.png" alt="">
+              <img class="mitsubishi" src="https://autoritm-service.ru/img/calc-brand7.png" alt="Mitsubishi">
             </li>
             <li class="content__list-item">
               <div class="inner-mark">
@@ -87,6 +88,14 @@
               </div>
             </li>
           </ul>
+          <div class="content__help-text">
+            Добрый день!
+            Я Андрей -
+            старший мастер.
+            Сегодня буду
+            Вашим
+            консультантом
+          </div>
         </div>
         <!--      content that i hide on click  SECOND SCREEN-->
         <form class="content-form" action="#" method="get">
@@ -129,6 +138,17 @@
                 <button class="content-form__footer-button back">НАЗАД</button>
                 <button class="content-form__footer-button check-price">УЗНАТЬ СТОИМОСТЬ</button>
               </footer>
+              <div class="content__help-text second">
+                С автомобилями
+                марки <span class="mark-name">Ford</span> мы
+                работаем с 1989 г.
+                Опыт и дилерское
+                оборудование
+                позволяют нам
+                справляться даже
+                с нестандартными
+                задачами!
+              </div>
             </div>
           </div>
           <!--      content that i hide on click  THEERD SCREEN-->
@@ -178,72 +198,9 @@
       </div>
     </div>
   </div>
-  <div class="test"></div>
 </main>
+<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+
 </body>
-
-
-<script>
-
-  const lineIndicator = document.querySelector('.body-line__indicator');
-
-  const backBtn = document.querySelector('.back');
-  const checkPriceBtn = document.querySelector('.check-price');
-  const contentFormInnerSuccess = document.querySelector('.content-form__inner-success');
-  const contentFormInner = document.querySelector('.content-form__inner');
-
-  //First screen
-  const content = document.querySelector('.content');
-  const contentItem = document.querySelectorAll('.content__list-item');
-  const contentForm = document.querySelector('.content-form');
-
-  function hideContent() {
-    content.style.display = 'none';
-    thanksPage.style.display = 'none';
-    contentForm.style.display = 'block';
-    contentFormInnerSuccess.style.display = 'none';
-    lineIndicator.style.width = '66.666%';
-  }
-
-  contentItem.forEach(function (item) {
-    item.addEventListener('click', hideContent);
-  });
-
-  //Second screen
-  function goBack() {
-    contentForm.style.display = 'none';
-    content.style.display = 'block';
-    lineIndicator.style.width = '33.33%';
-  }
-
-  backBtn.addEventListener('click', goBack);
-
-  function getPrice() {
-    const progressLine = document.querySelector('.body-line');
-
-    content.style.display = 'none';
-    progressLine.style.display = 'none';
-    contentFormInner.style.display = 'none';
-    contentFormInnerSuccess.style.display = 'block';
-  }
-
-  checkPriceBtn.addEventListener('click', getPrice);
-
-  //Third screen
-  const goBackTwoBnt = document.querySelector('.go-back');
-  function goBackTwo() {
-    contentFormInner.style.display = 'block';
-    contentFormInnerSuccess.style.display = 'none';
-  }
-  goBackTwoBnt.addEventListener('click', goBackTwo)
-
-  const checkPriceTwoBtn = document.querySelector('.check-cost');
-  const thanksPage = document.querySelector('.content-form__thanks-page');
-
-  function checkPriceTwo(){
-    contentFormInnerSuccess.style.display = 'none';
-    thanksPage.style.display = 'block';
-  }
-  checkPriceTwoBtn.addEventListener('click', checkPriceTwo)
-</script>
 </html>
